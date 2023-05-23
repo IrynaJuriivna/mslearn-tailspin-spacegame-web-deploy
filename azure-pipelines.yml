@@ -78,13 +78,19 @@ stages:
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameDev)'
+    stageName: 'Dev'
+    envName: 'dev'
 
 - template: templates/deploymemt.yml
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameTest)'
+    stageName: 'Test'
+    envName: 'test'
 
 - template: templates/deployment.yml
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameStaging)'
+    stageName: 'Staging'
+    envName: 'staging'

@@ -1,15 +1,17 @@
 parameters:
   buildConfiguration: 'Release'
-  webAppName: ''
+  webAppName: 'app name'
+  stageName: 'Dev'
+  envName: 'development'
 
-- stage: 'Staging'
-  displayName: 'Deploy to the staging environment'
+- stage: '${{ parameters.stageName }}'
+  displayName: 'Deploy to the ${{ parameters.envName }} environment'
   dependsOn: Test
   jobs:
   - deployment: Deploy
     pool:
       vmImage: 'ubuntu-20.04'
-    environment: staging
+    environment: ${{ parameters.envName }}
     variables:
     - group: 'Release'
     strategy:
