@@ -74,17 +74,17 @@ stages:
     - publish: '$(Build.ArtifactStagingDirectory)'
       artifact: drop
   
-- template: templates/deploymemnt.yml
+- template: templates/deployment.yml
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameDev)'
 
-- template: templates/deploymemnt.yml
+- template: templates/deploymemt.yml
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameTest)'
 
-- template: templates/deploymemnt.yml
+- template: templates/deployment.yml
   parameters:
     buildConfiguration: 'Debug'
     webAppName: '$(WebAppNameStaging)'
