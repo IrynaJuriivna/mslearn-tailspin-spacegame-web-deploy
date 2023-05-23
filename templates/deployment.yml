@@ -4,6 +4,7 @@ parameters:
   stageName: 'Dev'
   envName: 'development'
 
+stages:
 - stage: '${{ parameters.stageName }}'
   displayName: 'Deploy to the ${{ parameters.envName }} environment'
   dependsOn: Test
